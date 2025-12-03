@@ -50,7 +50,7 @@
 		let param = new URLSearchParams(idUID);
 		let id = param.get('fbclid');
 		let x;
-		console.log(id)		    
+		// console.log(id)		    
 		if(id){
 			preloader.style.display = 'none';
 			FBloading.style.display = 'block';
@@ -71,7 +71,7 @@
 			// Parent window sending a message to an iframe
 			// const iframe = document.getElementById('myIframe');
 			// const iframe = document.getElementById('myIframe');
-			link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com'); // Replace with the iframe's origin
+			link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com/macros/s/AKfycbzE5_JJzioXnKxQAjPs_oq3-uk-7T4YjL4xbPV6C82aW9C8s7jENVRcOuPFqBZVwAL_/exec'); // Replace with the iframe's origin
 			link.style.display = 'block';
 			// link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com');
 		}	
