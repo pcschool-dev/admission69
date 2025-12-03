@@ -74,6 +74,10 @@
 		function preLoading(){ //ซ่อน loading
 			preloader.style.display = 'none';
 		};
+		const iframe = document.getElementById('link');
+		  iframe.onload = function() {
+		  console.log(iframe.contentDocument)
+		  }
 		
 	</script>
 </body>    
