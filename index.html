@@ -71,7 +71,7 @@
 			// Parent window sending a message to an iframe
 			// const iframe = document.getElementById('myIframe');
 			// const iframe = document.getElementById('myIframe');
-			link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com/macros/s/AKfycbzE5_JJzioXnKxQAjPs_oq3-uk-7T4YjL4xbPV6C82aW9C8s7jENVRcOuPFqBZVwAL_/exec'); // Replace with the iframe's origin
+			link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com'); // Replace with the iframe's origin
 			link.style.display = 'block';
 			// link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com');
 		}	
@@ -79,16 +79,17 @@
 			preloader.style.display = 'none';
 		};
 		// Iframe receiving a message
-		// window.addEventListener('message', (event) => {
-		// 	if (event.origin === 'https://pcschool-dev.github.io') { // Verify the origin for security
-		// 		console.log('Message received in iframe:', event.data);
-		// 		link.style.display = 'block';  
-		// 	}
-		// });
+		window.addEventListener('message', (event) => {
+			console.log(event)
+			if (event.origin === 'https://pcschool-dev.github.io') { // Verify the origin for security
+				console.log('Message received in iframe:', event.data);
+				// link.style.display = 'block';  
+			}
+		});
 		// const iframe = document.getElementById('link');
-		//   iframe.onload = function() {
-		//   console.log(iframe.contentDocument)
-		//   }
+		  link.onload = function() {
+		  console.log(link.contentDocument)
+		  }
 		
 	</script>
 </body>    
