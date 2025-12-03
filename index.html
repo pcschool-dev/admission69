@@ -40,7 +40,7 @@
 		
 	</div>
 	
-    <iframe style="display:none" id="link"  enctype="multipart/form-data" scrolling="auto"  src="https://script.google.com/macros/s/AKfycbzE5_JJzioXnKxQAjPs_oq3-uk-7T4YjL4xbPV6C82aW9C8s7jENVRcOuPFqBZVwAL_/exec"></iframe>
+    <iframe style="display:none" id="link"  enctype="multipart/form-data" scrolling="auto" referrerpolicy="no-referrer"  src="https://script.google.com/macros/s/AKfycbzE5_JJzioXnKxQAjPs_oq3-uk-7T4YjL4xbPV6C82aW9C8s7jENVRcOuPFqBZVwAL_/exec"></iframe>
 	
     <script type="text/javascript">
         let preloader = document.getElementById("loading");
@@ -70,22 +70,23 @@
 		} else {
 			// Parent window sending a message to an iframe
 			// const iframe = document.getElementById('myIframe');
-			link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com');
+			link.style.display = 'block';
+			// link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com');
 		}	
 		function preLoading(){ //ซ่อน loading
 			preloader.style.display = 'none';
 		};
 		// Iframe receiving a message
-		window.addEventListener('message', (event) => {
-			if (event.origin === 'https://pcschool-dev.github.io') { // Verify the origin for security
-				console.log('Message received in iframe:', event.data);
-				link.style.display = 'block';  
-			}
-		});
-		const iframe = document.getElementById('link');
-		  iframe.onload = function() {
-		  console.log(iframe.contentDocument)
-		  }
+		// window.addEventListener('message', (event) => {
+		// 	if (event.origin === 'https://pcschool-dev.github.io') { // Verify the origin for security
+		// 		console.log('Message received in iframe:', event.data);
+		// 		link.style.display = 'block';  
+		// 	}
+		// });
+		// const iframe = document.getElementById('link');
+		//   iframe.onload = function() {
+		//   console.log(iframe.contentDocument)
+		//   }
 		
 	</script>
 </body>    
