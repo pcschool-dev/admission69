@@ -49,6 +49,7 @@
 		let idUID = window.location.search;
 		let param = new URLSearchParams(idUID);
 		let id = param.get('fbclid');
+		let idApply = param.get('id');
 		let x;
 		// console.log(id)		    
 		if(id){
@@ -66,6 +67,11 @@
 					window.location.href = 'https://pcschool-dev.github.io/admission69/'
 				}  				
 			}, 1000);
+		
+		} else if(idApply){
+			preloader.style.display = 'none';
+			FBloading.style.display = 'none';
+			window.location.href = `https://script.google.com/macros/s/AKfycbzSB8v888nCAKQ-SSFFNtrw3ZCDuxpp6W_G95qZbubUzEeYciBmNV_KIKZyB4tyloBo/exec?id=${idApply}`
 		
 		} else {
 			// Parent window sending a message to an iframe
