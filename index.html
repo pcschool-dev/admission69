@@ -31,7 +31,7 @@
 </style>
 </head>
 <!-- <body>  -->
-<body onload="preLoading()">
+<body>
 	<div style="display:none;" align="center" id="FBloading" >
 		<h4>โปรดเปิดด้วย เบราว์เซอร์ภายนอก <br>Please open in external browser.</h4>	    
     	</div> 
@@ -81,7 +81,10 @@
 			// const iframe = document.getElementById('myIframe');
 			// const iframe = document.getElementById('myIframe');
 			// link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com'); // Replace with the iframe's origin
-			link.style.display = 'block';
+			link.onload = function() {
+		        preloader.style.display = 'none';
+		        link.style.display = 'block';
+		    };
 			// link.contentWindow.postMessage('Hello from parent!', 'https://script.google.com');
 		}	
 		function preLoading(){ //ซ่อน loading
