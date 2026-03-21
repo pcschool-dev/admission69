@@ -100,11 +100,12 @@
             };
         } else {
             // กรณีเข้าหน้าแรกปกติ (โหลดแบบ No Cache)
+			 preloader.style.display = 'block';
             link.src = getNoCacheUrl(baseAppScript);
             
             link.onload = function() {
-                preloader.style.display = 'none';
-                link.style.display = 'block';
+				preloader.style.display = 'none';
+				link.style.display = 'block';
             };
         }
 
